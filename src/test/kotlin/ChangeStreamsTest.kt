@@ -1,3 +1,5 @@
+import com.mongodb.client.model.Aggregates
+import com.mongodb.client.model.Filters
 import mu.KLogging
 import org.litote.kmongo.KMongo
 import org.litote.kmongo.getCollection
@@ -9,7 +11,10 @@ class ChangeStreamsTest : BaseTest({
         val database = client.getDatabase("test")
         database.createCollection("person")
         val collection = database.getCollection<Person>("person")
-        val iterator = collection.watch().iterator()
+        val filters = Filters.`in`("operationType", listOf("insert"))
+        val aggregates = Aggregates.match(filters)
+        val iterator = client.watch().iterator()
+        // val iterator = collection.watch(listOf(aggregates)).iterator()
         // collection.watch()
         //     .listen { change ->
         //         logger.info { "Change: ${change.fullDocument}" }
