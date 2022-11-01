@@ -19,9 +19,9 @@ class ChangeStreamsTest : BaseTest({
         //     .listen { change ->
         //         logger.info { "Change: ${change.fullDocument}" }
         //     }
-        collection.insertOne(Person("Jan"))
-        collection.insertOne(Person("Marian"))
-        collection.insertOne(Person("Marek"))
+        collection.insertOne(Person(name = "John"))
+        collection.insertOne(Person(name = "Brad"))
+        collection.insertOne(Person(name = "Anthony"))
         iterator.use {
             logger.info { "changes: ${it.next()}" }
         }

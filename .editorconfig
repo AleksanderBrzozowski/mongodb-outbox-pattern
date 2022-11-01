@@ -1,5 +1,4 @@
 [*.{kt,kts}]
-ktlint_code_style = official
 ij_kotlin_name_count_to_use_star_import = 999
 ij_kotlin_name_count_to_use_star_import_for_members = 999
 ij_kotlin_allow_trailing_comma = true

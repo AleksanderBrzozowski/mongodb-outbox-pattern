@@ -24,12 +24,13 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.4.1")
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.23")
 
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8")
+
     implementation("org.litote.kmongo:kmongo:4.7.1")
 
     implementation("io.debezium:debezium-api")
     implementation("io.debezium:debezium-embedded")
     implementation("io.debezium:debezium-connector-mongodb")
-
 
     testImplementation(platform("io.kotest:kotest-bom:5.4.2"))
     testImplementation(platform("org.testcontainers:testcontainers-bom:1.17.4"))
@@ -37,7 +38,6 @@ dependencies {
     testImplementation("io.kotest:kotest-runner-junit5")
     testImplementation("io.kotest.extensions:kotest-extensions-testcontainers:1.3.4")
     testImplementation("org.testcontainers:mongodb")
-
 }
 
 tasks.test {
